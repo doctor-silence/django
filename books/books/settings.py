@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'store',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -78,12 +79,18 @@ WSGI_APPLICATION = 'books.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Poject_Books',
+        'NAME': 'Project_Books',
         'USER': 'admin',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
 
 
